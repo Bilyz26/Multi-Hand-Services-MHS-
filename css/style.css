@@ -265,6 +265,32 @@ footer {
     cursor: pointer;
 }
 
+/* RTL Support */
+[dir="rtl"] {
+    text-align: right;
+}
+
+[dir="rtl"] .nav-links {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .service-card {
+    text-align: right;
+}
+
+[dir="rtl"] .form-group {
+    text-align: right;
+}
+
+[dir="rtl"] .footer-content {
+    text-align: right;
+}
+
+[dir="rtl"] .whatsapp-button i {
+    margin-left: 8px;
+    margin-right: 0;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .navbar {

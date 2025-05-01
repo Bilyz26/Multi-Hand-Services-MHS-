@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Debug logging
+    console.log('Translations object available:', typeof translations !== 'undefined');
+    
     // Slideshow functionality
     const slides = document.querySelectorAll('.hero-slide');
     let currentSlide = 0;
@@ -12,6 +15,66 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Start the slideshow
     setInterval(nextSlide, slideInterval);
+
+    // Language switching functionality
+    function updateContent(lang) {
+        if (typeof translations === 'undefined') {
+            console.error('Translations not loaded!');
+            return;
+        }
+
+        console.log('Switching to language:', lang);
+        console.log('Available translations:', translations[lang]);
+        
+        const elements = document.querySelectorAll('[data-translate]');
+        console.log('Found elements to translate:', elements.length);
+        
+        elements.forEach(element => {
+            const key = element.getAttribute('data-translate');
+            console.log('Translating element:', key, 'to language:', lang);
+            
+            if (translations[lang] && translations[lang][key]) {
+                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                    element.placeholder = translations[lang][key];
+                } else if (element.tagName === 'OPTION') {
+                    element.text = translations[lang][key];
+                } else {
+                    element.textContent = translations[lang][key];
+                }
+                console.log('Successfully translated:', key);
+            } else {
+                console.log('Translation missing for key:', key);
+            }
+        });
+
+        // Update select options
+        const serviceSelect = document.getElementById('service');
+        if (serviceSelect) {
+            Array.from(serviceSelect.options).forEach(option => {
+                const key = option.getAttribute('data-translate');
+                if (key && translations[lang][key]) {
+                    option.text = translations[lang][key];
+                }
+            });
+        }
+
+        // Update document direction for Arabic
+        document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+        document.documentElement.lang = lang;
+
+        // Store the language preference
+        localStorage.setItem('preferred_language', lang);
+    }
+
+    // Load saved language preference
+    const savedLang = localStorage.getItem('preferred_language') || 'en';
+    document.getElementById('language').value = savedLang;
+    updateContent(savedLang);
+
+    // Make language change function globally available
+    window.changeLanguage = function(lang) {
+        updateContent(lang);
+    };
 
     // Service type dropdown handler
     const serviceSelect = document.getElementById('service');
@@ -58,16 +121,4 @@ document.addEventListener('DOMContentLoaded', function() {
     const dateInput = document.getElementById('date');
     const today = new Date().toISOString().split('T')[0];
     dateInput.setAttribute('min', today);
-
-    // Language switcher
-    function changeLanguage() {
-        const lang = document.getElementById('language').value;
-        // Here you would implement the language switching logic
-        console.log('Language changed to:', lang);
-        // This would typically involve loading language-specific content
-        // For now, we'll just log the change
-    }
-
-    // Make changeLanguage function globally available
-    window.changeLanguage = changeLanguage;
 });

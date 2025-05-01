@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,12 +15,12 @@ session_start();
                 <h1>ServicePro</h1>
             </div>
             <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#services">Services</a>
-                <a href="#request">Request Service</a>
-                <a href="#contact">Contact</a>
+                <a href="#home" data-translate="nav_home">Home</a>
+                <a href="#services" data-translate="nav_services">Services</a>
+                <a href="#request" data-translate="nav_request">Request Service</a>
+                <a href="#contact" data-translate="nav_contact">Contact</a>
                 <div class="language-selector">
-                    <select id="language" onchange="changeLanguage()">
+                    <select id="language" onchange="changeLanguage(this.value)">
                         <option value="en">English</option>
                         <option value="de">Deutsch</option>
                         <option value="ar">عربي</option>
@@ -42,94 +40,94 @@ session_start();
                 <div class="hero-slide" style="background-image: url('images/painter.jpg')"></div>
             </div>
             <div class="hero-content">
-                <h1>Professional Services at Your Doorstep</h1>
-                <p>Quality, Reliability, and Excellence in Every Service</p>
-                <a href="#request" class="cta-button">Request Service</a>
+                <h1 data-translate="hero_title">Professional Services at Your Doorstep</h1>
+                <p data-translate="hero_subtitle">Quality, Reliability, and Excellence in Every Service</p>
+                <a href="#request" class="cta-button" data-translate="hero_cta">Request Service</a>
             </div>
         </section>
 
         <section id="services" class="services">
-            <h2>Our Services</h2>
+            <h2 data-translate="services_title">Our Services</h2>
             <div class="service-grid">
                 <div class="service-card">
                     <i class="fas fa-broom"></i>
-                    <h3>Cleaning</h3>
-                    <p>Professional cleaning services for homes and offices</p>
+                    <h3 data-translate="service_cleaning">Cleaning</h3>
+                    <p data-translate="service_cleaning_desc">Professional cleaning services for homes and offices</p>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-truck"></i>
-                    <h3>Moving Help</h3>
-                    <p>Reliable moving assistance for a stress-free relocation</p>
+                    <h3 data-translate="service_moving">Moving Help</h3>
+                    <p data-translate="service_moving_desc">Reliable moving assistance for a stress-free relocation</p>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-leaf"></i>
-                    <h3>Garden Work</h3>
-                    <p>Expert garden maintenance and landscaping</p>
+                    <h3 data-translate="service_garden">Garden Work</h3>
+                    <p data-translate="service_garden_desc">Expert garden maintenance and landscaping</p>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-wall"></i>
-                    <h3>Wall Building</h3>
-                    <p>Professional wall construction and repair services</p>
+                    <h3 data-translate="service_wall">Wall Building</h3>
+                    <p data-translate="service_wall_desc">Professional wall construction and repair services</p>
                 </div>
             </div>
         </section>
 
         <section id="request" class="request-form">
-            <h2>Request a Service</h2>
+            <h2 data-translate="form_title">Request a Service</h2>
             <form id="serviceForm" action="process_form.php" method="POST">
                 <div class="form-group">
-                    <label for="service">Select Service*</label>
+                    <label for="service" data-translate="form_service">Select Service*</label>
                     <select name="service" id="service" required>
-                        <option value="">Choose a service...</option>
-                        <option value="cleaning">Cleaning</option>
-                        <option value="moving">Moving Help</option>
-                        <option value="garden">Garden Work</option>
-                        <option value="wall">Wall Building</option>
-                        <option value="other">Other</option>
+                        <option value="" data-translate="form_service_placeholder">Choose a service...</option>
+                        <option value="cleaning" data-translate="option_cleaning">Cleaning</option>
+                        <option value="moving" data-translate="option_moving">Moving Help</option>
+                        <option value="garden" data-translate="option_garden">Garden Work</option>
+                        <option value="wall" data-translate="option_wall">Wall Building</option>
+                        <option value="other" data-translate="option_other">Other</option>
                     </select>
                 </div>
 
                 <div class="form-group" id="otherServiceGroup" style="display: none;">
-                    <label for="otherService">Specify Other Service*</label>
+                    <label for="otherService" data-translate="form_other_service">Specify Other Service*</label>
                     <input type="text" name="otherService" id="otherService">
                 </div>
 
                 <div class="form-group">
-                    <label for="date">Preferred Date*</label>
+                    <label for="date" data-translate="form_date">Preferred Date*</label>
                     <input type="date" name="date" id="date" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="time">Preferred Time</label>
+                    <label for="time" data-translate="form_time">Preferred Time</label>
                     <input type="time" name="time" id="time">
                 </div>
 
                 <div class="form-group">
-                    <label for="name">Full Name*</label>
+                    <label for="name" data-translate="form_name">Full Name*</label>
                     <input type="text" name="name" id="name" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Email*</label>
+                    <label for="email" data-translate="form_email">Email*</label>
                     <input type="email" name="email" id="email" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="phone">Phone Number*</label>
+                    <label for="phone" data-translate="form_phone">Phone Number*</label>
                     <input type="tel" name="phone" id="phone" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="address">Address</label>
+                    <label for="address" data-translate="form_address">Address</label>
                     <textarea name="address" id="address" rows="2"></textarea>
                 </div>
 
                 <div class="form-group">
-                    <label for="message">Additional Details</label>
+                    <label for="message" data-translate="form_message">Additional Details</label>
                     <textarea name="message" id="message" rows="4"></textarea>
                 </div>
 
-                <button type="submit" class="submit-button">Submit Request</button>
+                <button type="submit" class="submit-button" data-translate="form_submit">Submit Request</button>
             </form>
         </section>
     </main>
@@ -137,19 +135,20 @@ session_start();
     <footer>
         <div class="footer-content">
             <div class="contact-info">
-                <h3>Contact Us</h3>
+                <h3 data-translate="footer_contact">Contact Us</h3>
                 <p><i class="fas fa-phone"></i> +1234567890</p>
                 <p><i class="fas fa-envelope"></i> info@servicepro.com</p>
                 <a href="https://wa.me/1234567890" class="whatsapp-button">
-                    <i class="fab fa-whatsapp"></i> Contact via WhatsApp
+                    <i class="fab fa-whatsapp"></i> <span data-translate="whatsapp_button">Contact via WhatsApp</span>
                 </a>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 ServicePro. All rights reserved.</p>
+            <p>&copy; 2025 ServicePro. <span data-translate="footer_rights">All rights reserved.</span></p>
         </div>
     </footer>
 
+    <script src="js/translations.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
