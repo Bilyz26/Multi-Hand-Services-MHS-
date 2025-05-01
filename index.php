@@ -22,7 +22,7 @@
                 <div class="language-selector">
                     <select id="language" onchange="changeLanguage(this.value)">
                         <option value="en">English</option>
-                        <option value="de">Deutsch</option>
+                        <option value="de" selected>Deutsch</option>
                         <option value="ar">عربي</option>
                     </select>
                 </div>
@@ -73,62 +73,72 @@
         </section>
 
         <section id="request" class="request-form">
-            <h2 data-translate="form_title">Request a Service</h2>
-            <form id="serviceForm" action="process_form.php" method="POST">
-                <div class="form-group">
-                    <label for="service" data-translate="form_service">Select Service*</label>
-                    <select name="service" id="service" required>
-                        <option value="" data-translate="form_service_placeholder">Choose a service...</option>
-                        <option value="cleaning" data-translate="option_cleaning">Cleaning</option>
-                        <option value="moving" data-translate="option_moving">Moving Help</option>
-                        <option value="garden" data-translate="option_garden">Garden Work</option>
-                        <option value="wall" data-translate="option_wall">Wall Building</option>
-                        <option value="other" data-translate="option_other">Other</option>
-                    </select>
-                </div>
+            <div class="form-container">
+                <h2 data-translate="form_title">Request a Service</h2>
+                <p class="form-subtitle" data-translate="form_subtitle">Tell us about your service needs and we'll get back to you quickly</p>
+                
+                <form id="serviceForm" action="process_form.php" method="POST">
+                    <div class="form-grid">
+                        <div class="form-group service-selection full-width">
+                            <label for="service" class="required-field" data-translate="form_service">Select Service</label>
+                            <select name="service" id="service" required>
+                                <option value="" data-translate="form_service_placeholder">Choose a service...</option>
+                                <option value="cleaning" data-translate="option_cleaning">Cleaning</option>
+                                <option value="moving" data-translate="option_moving">Moving Help</option>
+                                <option value="garden" data-translate="option_garden">Garden Work</option>
+                                <option value="wall" data-translate="option_wall">Wall Building</option>
+                                <option value="other" data-translate="option_other">Other</option>
+                            </select>
+                        </div>
 
-                <div class="form-group" id="otherServiceGroup" style="display: none;">
-                    <label for="otherService" data-translate="form_other_service">Specify Other Service*</label>
-                    <input type="text" name="otherService" id="otherService">
-                </div>
+                        <div class="form-group full-width" id="otherServiceGroup" style="display: none;">
+                            <label for="otherService" class="required-field" data-translate="form_other_service">Specify Other Service</label>
+                            <input type="text" name="otherService" id="otherService">
+                        </div>
 
-                <div class="form-group">
-                    <label for="date" data-translate="form_date">Preferred Date*</label>
-                    <input type="date" name="date" id="date" required>
-                </div>
+                        <div class="form-group">
+                            <label for="date" class="required-field" data-translate="form_date">Preferred Date</label>
+                            <input type="date" name="date" id="date" required min="<?php echo date('Y-m-d'); ?>">
+                        </div>
 
-                <div class="form-group">
-                    <label for="time" data-translate="form_time">Preferred Time</label>
-                    <input type="time" name="time" id="time">
-                </div>
+                        <div class="form-group">
+                            <label for="time" data-translate="form_time">Preferred Time</label>
+                            <input type="time" name="time" id="time">
+                        </div>
 
-                <div class="form-group">
-                    <label for="name" data-translate="form_name">Full Name*</label>
-                    <input type="text" name="name" id="name" required>
-                </div>
+                        <div class="form-group">
+                            <label for="name" class="required-field" data-translate="form_name">Full Name</label>
+                            <input type="text" name="name" id="name" required>
+                        </div>
 
-                <div class="form-group">
-                    <label for="email" data-translate="form_email">Email*</label>
-                    <input type="email" name="email" id="email" required>
-                </div>
+                        <div class="form-group">
+                            <label for="phone" class="required-field" data-translate="form_phone">Phone Number</label>
+                            <input type="tel" name="phone" id="phone" required pattern="[+]?[0-9\s-()]{8,}" title="Please enter a valid phone number">
+                        </div>
 
-                <div class="form-group">
-                    <label for="phone" data-translate="form_phone">Phone Number*</label>
-                    <input type="tel" name="phone" id="phone" required>
-                </div>
+                        <div class="form-group">
+                            <label for="email" class="required-field" data-translate="form_email">Email</label>
+                            <input type="email" name="email" id="email" required>
+                        </div>
 
-                <div class="form-group">
-                    <label for="address" data-translate="form_address">Address</label>
-                    <textarea name="address" id="address" rows="2"></textarea>
-                </div>
+                        <div class="form-group">
+                            <label for="address" class="required-field" data-translate="form_address">Service Address</label>
+                            <textarea name="address" id="address" rows="2" required></textarea>
+                        </div>
 
-                <div class="form-group">
-                    <label for="message" data-translate="form_message">Additional Details</label>
-                    <textarea name="message" id="message" rows="4"></textarea>
-                </div>
+                        <div class="form-group full-width">
+                            <label for="message" data-translate="form_message">Additional Notes</label>
+                            <textarea name="message" id="message" rows="3"></textarea>
+                        </div>
 
-                <button type="submit" class="submit-button" data-translate="form_submit">Submit Request</button>
-            </form>
+                        <div class="form-group submit-group">
+                            <button type="submit" class="submit-button" data-translate="form_submit">
+                                <span>Request Service</span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </section>
     </main>
 

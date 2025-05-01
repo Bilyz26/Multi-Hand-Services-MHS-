@@ -1,10 +1,18 @@
 :root {
-    --primary-color: #4a90e2;
-    --secondary-color: #2c3e50;
-    --accent-color: #e74c3c;
-    --text-color: #333;
-    --light-bg: #f5f6fa;
-    --white: #ffffff;
+    --primary-color: #2E8B57;
+    --secondary-color: #FFD700;
+    --white: #FFFFFF;
+    --light-green: #8FBC8F;
+    --pale-yellow: #FFFACD;
+    --text-color: #333333;
+    --light-bg: var(--pale-yellow);
+    
+    /* Service Category Colors */
+    --cleaning-color: #98FB98;
+    --gardening-color: #006400;
+    --painting-color: #556B2F;
+    --repairs-color: #9DC183;
+    --construction-color: #9ACD32;
 }
 
 * {
@@ -21,7 +29,7 @@ body {
 
 /* Navbar Styles */
 .navbar {
-    background-color: var(--white);
+    background-color: var(--primary-color);
     padding: 1rem 5%;
     display: flex;
     justify-content: space-between;
@@ -34,7 +42,7 @@ body {
 }
 
 .logo h1 {
-    color: var(--primary-color);
+    color: var(--white);
     font-size: 1.8rem;
 }
 
@@ -46,13 +54,13 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--secondary-color);
+    color: var(--white);
     font-weight: 500;
     transition: color 0.3s;
 }
 
 .nav-links a:hover {
-    color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 /* Hero Section */
@@ -110,16 +118,17 @@ body {
 .cta-button {
     display: inline-block;
     padding: 1rem 2rem;
-    background-color: var(--primary-color);
-    color: var(--white);
+    background-color: var(--secondary-color);
+    color: var(--text-color);
     text-decoration: none;
     border-radius: 5px;
     margin-top: 2rem;
     transition: background-color 0.3s;
+    font-weight: bold;
 }
 
 .cta-button:hover {
-    background-color: #357abd;
+    background-color: var(--pale-yellow);
 }
 
 /* Services Section */
@@ -147,6 +156,7 @@ body {
     text-align: center;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     transition: transform 0.3s;
+    border-top: 4px solid var(--primary-color);
 }
 
 .service-card:hover {
@@ -159,58 +169,205 @@ body {
     margin-bottom: 1rem;
 }
 
+/* Service-specific styles */
+.service-card.cleaning {
+    border-top-color: var(--cleaning-color);
+}
+.service-card.cleaning i {
+    color: var(--cleaning-color);
+}
+
+.service-card.gardening {
+    border-top-color: var(--gardening-color);
+}
+.service-card.gardening i {
+    color: var(--gardening-color);
+}
+
+.service-card.painting {
+    border-top-color: var(--painting-color);
+}
+.service-card.painting i {
+    color: var(--painting-color);
+}
+
+.service-card.repairs {
+    border-top-color: var(--repairs-color);
+}
+.service-card.repairs i {
+    color: var(--repairs-color);
+}
+
+.service-card.construction {
+    border-top-color: var(--construction-color);
+}
+.service-card.construction i {
+    color: var(--construction-color);
+}
+
 /* Form Styles */
 .request-form {
     padding: 5rem 5%;
+    background: linear-gradient(135deg, var(--pale-yellow) 0%, var(--light-green) 100%);
+    position: relative;
+}
+
+.form-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, 
+        var(--cleaning-color) 0%,
+        var(--gardening-color) 25%,
+        var(--painting-color) 50%,
+        var(--repairs-color) 75%,
+        var(--construction-color) 100%
+    );
 }
 
 .request-form h2 {
     text-align: center;
-    margin-bottom: 3rem;
-    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    font-size: 2.5rem;
 }
 
-form {
-    max-width: 800px;
-    margin: 0 auto;
-    background: var(--white);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+.form-subtitle {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
 }
 
 .form-group {
     margin-bottom: 1.5rem;
 }
 
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
 label {
     display: block;
     margin-bottom: 0.5rem;
-    color: var(--secondary-color);
+    color: var(--primary-color);
+    font-weight: 600;
 }
 
 input, select, textarea {
     width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    padding: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
     font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.1);
+    outline: none;
+}
+
+.service-selection select {
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.submit-group {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 1rem;
 }
 
 .submit-button {
     background-color: var(--primary-color);
     color: var(--white);
-    padding: 1rem 2rem;
+    padding: 1.2rem 3rem;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
     cursor: pointer;
-    width: 100%;
-    font-size: 1.1rem;
-    transition: background-color 0.3s;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(46, 139, 87, 0.2);
+    width: auto;
+    min-width: 200px;
 }
 
 .submit-button:hover {
-    background-color: #357abd;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(46, 139, 87, 0.3);
+}
+
+.submit-button:active {
+    transform: translateY(0);
+}
+
+.required-field::after {
+    content: '*';
+    color: #dc3545;
+    margin-left: 4px;
+}
+
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .form-container {
+        padding: 2rem;
+    }
+    
+    .request-form h2 {
+        font-size: 2rem;
+    }
+    
+    .submit-button {
+        width: 100%;
+        padding: 1rem 2rem;
+    }
+}
+
+/* Form Animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-container {
+    animation: slideIn 0.5s ease-out;
 }
 
 /* Footer Styles */
