@@ -1,0 +1,364 @@
+[04-May-2025 16:29:28 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Users\bilal\OneDrive\Bureau\projects\reinigung firma\test_email.php:5) in C:\Users\bilal\OneDrive\Bureau\projects\reinigung firma\process_form.php on line 168
+[04-May-2025 16:29:56 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Users\bilal\OneDrive\Bureau\projects\reinigung firma\test_email.php:5) in C:\Users\bilal\OneDrive\Bureau\projects\reinigung firma\process_form.php on line 166
+[04-May-2025 16:30:21 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Users\bilal\OneDrive\Bureau\projects\reinigung firma\test_email.php:5) in C:\Users\bilal\OneDrive\Bureau\projects\reinigung firma\process_form.php on line 167
+[04-May-2025 16:31:30 UTC] PHP version: 8.4.6
+[04-May-2025 16:31:30 UTC] OpenSSL version: OpenSSL 3.0.16 11 Feb 2025
+[04-May-2025 16:31:30 UTC] Attempting to send email to: multihandservices@gmail.com
+[04-May-2025 16:31:30 UTC] SERVER -> CLIENT: 220 smtp.gmail.com ESMTP ffacd0b85a97d-3a099ae0ce2sm7914301f8f.16 - gsmtp
+
+[04-May-2025 16:31:30 UTC] CLIENT -> SERVER: EHLO LAPTOP-APHV9V69
+
+[04-May-2025 16:31:30 UTC] SERVER -> CLIENT: 250-smtp.gmail.com at your service, [94.176.251.51]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+[04-May-2025 16:31:30 UTC] CLIENT -> SERVER: STARTTLS
+
+[04-May-2025 16:31:30 UTC] SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+[04-May-2025 16:31:33 UTC] CLIENT -> SERVER: EHLO LAPTOP-APHV9V69
+
+[04-May-2025 16:31:33 UTC] SERVER -> CLIENT: 250-smtp.gmail.com at your service, [94.176.251.51]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+[04-May-2025 16:31:33 UTC] CLIENT -> SERVER: AUTH LOGIN
+
+[04-May-2025 16:31:33 UTC] SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+[04-May-2025 16:31:33 UTC] CLIENT -> SERVER: [credentials hidden]
+[04-May-2025 16:31:34 UTC] SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+[04-May-2025 16:31:34 UTC] CLIENT -> SERVER: [credentials hidden]
+[04-May-2025 16:31:34 UTC] SERVER -> CLIENT: 235 2.7.0 Accepted
+
+[04-May-2025 16:31:34 UTC] CLIENT -> SERVER: MAIL FROM:<multihandservices@gmail.com>
+
+[04-May-2025 16:31:34 UTC] SERVER -> CLIENT: 250 2.1.0 OK ffacd0b85a97d-3a099ae0ce2sm7914301f8f.16 - gsmtp
+
+[04-May-2025 16:31:34 UTC] CLIENT -> SERVER: RCPT TO:<multihandservices@gmail.com>
+
+[04-May-2025 16:31:34 UTC] SERVER -> CLIENT: 250 2.1.5 OK ffacd0b85a97d-3a099ae0ce2sm7914301f8f.16 - gsmtp
+
+[04-May-2025 16:31:34 UTC] CLIENT -> SERVER: DATA
+
+[04-May-2025 16:31:34 UTC] SERVER -> CLIENT: 354 Go ahead ffacd0b85a97d-3a099ae0ce2sm7914301f8f.16 - gsmtp
+
+[04-May-2025 16:31:34 UTC] CLIENT -> SERVER: Date: Sun, 4 May 2025 16:31:30 +0000
+
+[04-May-2025 16:31:34 UTC] CLIENT -> SERVER: To: multihandservices@gmail.com
+
+[04-May-2025 16:31:34 UTC] CLIENT -> SERVER: From: Multi-Hand Services <multihandservices@gmail.com>
+
+[04-May-2025 16:31:34 UTC] CLIENT -> SERVER: Subject: Test Email
+
+[04-May-2025 16:31:34 UTC] CLIENT -> SERVER: Message-ID: <U1cibjU1gKrsjFr8fOgABsH7TTiabMTOhwrVoM0SNU@LAPTOP-APHV9V69>
+
+[04-May-2025 16:31:34 UTC] CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+[04-May-2025 16:31:34 UTC] CLIENT -> SERVER: MIME-Version: 1.0
+
+[04-May-2025 16:31:34 UTC] CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+
+[04-May-2025 16:31:34 UTC] CLIENT -> SERVER: 
+
+[04-May-2025 16:31:34 UTC] CLIENT -> SERVER: <h1>Test Email</h1><p>This is a test email to verify the email sending functionality.</p>
+
+[04-May-2025 16:31:34 UTC] CLIENT -> SERVER: 
+
+[04-May-2025 16:31:34 UTC] CLIENT -> SERVER: .
+
+[04-May-2025 16:31:35 UTC] SERVER -> CLIENT: 250 2.0.0 OK  1746376295 ffacd0b85a97d-3a099ae0ce2sm7914301f8f.16 - gsmtp
+
+[04-May-2025 16:31:35 UTC] CLIENT -> SERVER: QUIT
+
+[04-May-2025 16:31:35 UTC] SERVER -> CLIENT: 221 2.0.0 closing connection ffacd0b85a97d-3a099ae0ce2sm7914301f8f.16 - gsmtp
+
+[04-May-2025 16:33:56 UTC] PHP version: 8.4.6
+[04-May-2025 16:33:56 UTC] OpenSSL version: OpenSSL 3.0.16 11 Feb 2025
+[04-May-2025 16:33:56 UTC] Attempting to send email to: multihandservices@gmail.com
+[04-May-2025 16:33:56 UTC] SERVER -> CLIENT: 220 smtp.gmail.com ESMTP ffacd0b85a97d-3a099b10083sm7865333f8f.62 - gsmtp
+
+[04-May-2025 16:33:56 UTC] CLIENT -> SERVER: EHLO localhost
+
+[04-May-2025 16:33:56 UTC] SERVER -> CLIENT: 250-smtp.gmail.com at your service, [94.176.251.51]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+[04-May-2025 16:33:56 UTC] CLIENT -> SERVER: STARTTLS
+
+[04-May-2025 16:33:56 UTC] SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+[04-May-2025 16:33:56 UTC] CLIENT -> SERVER: EHLO localhost
+
+[04-May-2025 16:33:57 UTC] SERVER -> CLIENT: 250-smtp.gmail.com at your service, [94.176.251.51]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+[04-May-2025 16:33:57 UTC] CLIENT -> SERVER: AUTH LOGIN
+
+[04-May-2025 16:33:57 UTC] SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+[04-May-2025 16:33:57 UTC] CLIENT -> SERVER: [credentials hidden]
+[04-May-2025 16:33:57 UTC] SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+[04-May-2025 16:33:57 UTC] CLIENT -> SERVER: [credentials hidden]
+[04-May-2025 16:33:57 UTC] SERVER -> CLIENT: 235 2.7.0 Accepted
+
+[04-May-2025 16:33:57 UTC] CLIENT -> SERVER: MAIL FROM:<multihandservices@gmail.com>
+
+[04-May-2025 16:33:57 UTC] SERVER -> CLIENT: 250 2.1.0 OK ffacd0b85a97d-3a099b10083sm7865333f8f.62 - gsmtp
+
+[04-May-2025 16:33:57 UTC] CLIENT -> SERVER: RCPT TO:<multihandservices@gmail.com>
+
+[04-May-2025 16:33:57 UTC] SERVER -> CLIENT: 250 2.1.5 OK ffacd0b85a97d-3a099b10083sm7865333f8f.62 - gsmtp
+
+[04-May-2025 16:33:57 UTC] CLIENT -> SERVER: DATA
+
+[04-May-2025 16:33:58 UTC] SERVER -> CLIENT: 354 Go ahead ffacd0b85a97d-3a099b10083sm7865333f8f.62 - gsmtp
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER: Date: Sun, 4 May 2025 16:33:56 +0000
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER: To: multihandservices@gmail.com
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER: From: Multi-Hand Services <multihandservices@gmail.com>
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER: Subject: New Service Request from bilal el yazidi
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER: Message-ID: <xJGyMDtqRYKQUh8AkFuPoXURxu583loUyNSEE8rRRU@localhost>
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER: MIME-Version: 1.0
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER: 
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER: 
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER:         <html>
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER:         <head>
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER:             <style>
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER:                 body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER:                 .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER:                 .header { background-color: #2E8B57; color: white; padding: 20px; text-align: center; }
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER:                 .content { padding: 20px; background-color: #f9f9f9; }
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER:                 .detail { margin-bottom: 10px; }
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER:                 .label { font-weight: bold; color: #2E8B57; }
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER:             </style>
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER:         </head>
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER:         <body>
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER:             <div class='container'>
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER:                 <div class='header'><h2>New Service Request</h2></div>
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER:                 <div class='content'>
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER:                     <div class='detail'><span class='label'>Service:</span> Cleaning</div>
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER:                     <div class='detail'><span class='label'>Date:</span> 2025-05-17</div>
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER:                     <div class='detail'><span class='label'>Time:</span> 19:35</div>
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER:                     <div class='detail'><span class='label'>Name:</span> bilal el yazidi</div>
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER:                     <div class='detail'><span class='label'>Email:</span> bilalelyazidi5@gmail.com</div>
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER:                     <div class='detail'><span class='label'>Phone:</span> 01732341685</div>
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER:                     <div class='detail'><span class='label'>Address:</span> unterer dorfweg 4</div>
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER:                     
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER:                 </div>
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER:             </div>
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER:         </body>
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER:         </html>
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER: 
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER: .
+
+[04-May-2025 16:33:58 UTC] SERVER -> CLIENT: 250 2.0.0 OK  1746376439 ffacd0b85a97d-3a099b10083sm7865333f8f.62 - gsmtp
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER: QUIT
+
+[04-May-2025 16:33:58 UTC] SERVER -> CLIENT: 221 2.0.0 closing connection ffacd0b85a97d-3a099b10083sm7865333f8f.62 - gsmtp
+
+[04-May-2025 16:33:58 UTC] PHP version: 8.4.6
+[04-May-2025 16:33:58 UTC] OpenSSL version: OpenSSL 3.0.16 11 Feb 2025
+[04-May-2025 16:33:58 UTC] Attempting to send email to: bilalelyazidi5@gmail.com
+[04-May-2025 16:33:58 UTC] SERVER -> CLIENT: 220 smtp.gmail.com ESMTP 5b1f17b1804b1-441ad870ae0sm107277785e9.2 - gsmtp
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER: EHLO localhost
+
+[04-May-2025 16:33:58 UTC] SERVER -> CLIENT: 250-smtp.gmail.com at your service, [94.176.251.51]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER: STARTTLS
+
+[04-May-2025 16:33:58 UTC] SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER: EHLO localhost
+
+[04-May-2025 16:33:58 UTC] SERVER -> CLIENT: 250-smtp.gmail.com at your service, [94.176.251.51]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER: AUTH LOGIN
+
+[04-May-2025 16:33:58 UTC] SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER: [credentials hidden]
+[04-May-2025 16:33:58 UTC] SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+[04-May-2025 16:33:58 UTC] CLIENT -> SERVER: [credentials hidden]
+[04-May-2025 16:33:59 UTC] SERVER -> CLIENT: 235 2.7.0 Accepted
+
+[04-May-2025 16:33:59 UTC] CLIENT -> SERVER: MAIL FROM:<multihandservices@gmail.com>
+
+[04-May-2025 16:33:59 UTC] SERVER -> CLIENT: 250 2.1.0 OK 5b1f17b1804b1-441ad870ae0sm107277785e9.2 - gsmtp
+
+[04-May-2025 16:33:59 UTC] CLIENT -> SERVER: RCPT TO:<bilalelyazidi5@gmail.com>
+
+[04-May-2025 16:33:59 UTC] SERVER -> CLIENT: 250 2.1.5 OK 5b1f17b1804b1-441ad870ae0sm107277785e9.2 - gsmtp
+
+[04-May-2025 16:33:59 UTC] CLIENT -> SERVER: DATA
+
+[04-May-2025 16:34:00 UTC] SERVER -> CLIENT: 354 Go ahead 5b1f17b1804b1-441ad870ae0sm107277785e9.2 - gsmtp
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER: Date: Sun, 4 May 2025 16:33:58 +0000
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER: To: bilalelyazidi5@gmail.com
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER: From: Multi-Hand Services <multihandservices@gmail.com>
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER: Subject: We've Received Your Service Request
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER: Message-ID: <tqPYQOrIUK4oLkdNHTT3up5PGpDFApqoWMNNdryUE@localhost>
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER: MIME-Version: 1.0
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER: 
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER: 
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER:             <html>
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER:             <head>
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER:                 <style>
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER:                     body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER:                     .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER:                     .header { background-color: #2E8B57; color: white; padding: 20px; text-align: center; }
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER:                     .content { padding: 20px; background-color: #f9f9f9; }
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER:                     .detail { margin-bottom: 15px; }
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER:                     .highlight { color: #2E8B57; font-weight: bold; }
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER:                 </style>
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER:             </head>
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER:             <body>
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER:                 <div class='container'>
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER:                     <div class='header'><h2>Thank You for Your Request</h2></div>
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER:                     <div class='content'>
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER:                         <p>Dear bilal el yazidi,</p>
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER:                         <p>Thank you for choosing Multi-Hand Services. We have received your service request and will contact you shortly to confirm the details.</p>
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER:                         <div class='detail'>
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER:                             <h3 style='color: #2E8B57;'>Your Request Details:</h3>
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER:                             <p><span class='highlight'>Service:</span> Cleaning</p>
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER:                             <p><span class='highlight'>Date:</span> 2025-05-17</p>
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER:                             <p><span class='highlight'>Time:</span> 19:35</p>
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER:                         </div>
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER:                         <p>If you have any questions, please don't hesitate to contact us.</p>
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER:                         <p>Best regards,<br><strong>Multi-Hand Services Team</strong></p>
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER:                     </div>
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER:                 </div>
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER:             </body>
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER:             </html>
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER: 
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER: .
+
+[04-May-2025 16:34:00 UTC] SERVER -> CLIENT: 250 2.0.0 OK  1746376441 5b1f17b1804b1-441ad870ae0sm107277785e9.2 - gsmtp
+
+[04-May-2025 16:34:00 UTC] CLIENT -> SERVER: QUIT
+
+[04-May-2025 16:34:00 UTC] SERVER -> CLIENT: 221 2.0.0 closing connection 5b1f17b1804b1-441ad870ae0sm107277785e9.2 - gsmtp
+

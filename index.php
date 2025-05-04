@@ -74,6 +74,24 @@
 
         <section id="request" class="request-form">
             <div class="form-container">
+                <?php if(isset($_SESSION['success_message'])): ?>
+                    <div class="alert alert-success">
+                        <?php 
+                        echo $_SESSION['success_message'];
+                        unset($_SESSION['success_message']);
+                        ?>
+                    </div>
+                <?php endif; ?>
+                
+                <?php if(isset($_SESSION['error_message'])): ?>
+                    <div class="alert alert-error">
+                        <?php 
+                        echo $_SESSION['error_message'];
+                        unset($_SESSION['error_message']);
+                        ?>
+                    </div>
+                <?php endif; ?>
+
                 <h2 data-translate="form_title">Request a Service</h2>
                 <p class="form-subtitle" data-translate="form_subtitle">Tell us about your service needs and we'll get back to you quickly</p>
                 
@@ -147,7 +165,7 @@
             <div class="contact-info">
                 <h3 data-translate="footer_contact">Contact Us</h3>
                 <p><i class="fas fa-phone"></i> +1234567890</p>
-                <p><i class="fas fa-envelope"></i> info@servicepro.com</p>
+                <p><i class="fas fa-envelope"></i> multihandservices@gmail.com</p>
                 <a href="https://wa.me/1234567890" class="whatsapp-button">
                     <i class="fab fa-whatsapp"></i> <span data-translate="whatsapp_button">Contact via WhatsApp</span>
                 </a>
