@@ -58,11 +58,8 @@ function send_email($to, $subject, $body, $from_name = 'Multi-Hand Services') {
         $mail->Subject = $subject;
         $mail->Body = $body;
         
-        // Send the email
-        echo "\nAttempting to send email...\n";
-        $success = $mail->send();
-        echo "Email sending " . ($success ? "succeeded" : "failed") . "\n";
-        return $success;
+        // Send the email silently
+        return $mail->send();
         
     } catch (Exception $e) {
         error_log("Message could not be sent. Mailer Error: " . $e->getMessage());
@@ -95,12 +92,12 @@ if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
         <html>
         <head>
             <style>
-                body { font-family: Arial, sans-serif; line-height: 1.6; }
-                .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-                .header { background-color: #2E8B57; color: white; padding: 20px; text-align: center; }
-                .content { padding: 20px; background-color: #f9f9f9; }
-                .detail { margin-bottom: 10px; }
-                .label { font-weight: bold; color: #2E8B57; }
+                body { font-family: Arial, sans-serif; line-height: 1.6; background-color: #FFFFFF; }
+                .container { max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #8FBC8F; border-radius: 8px; }
+                .header { background-color: #2E8B57; color: #FFFFFF; padding: 20px; text-align: center; border-radius: 8px 8px 0 0; }
+                .content { padding: 20px; background-color: #FFFACD; }
+                .detail { margin-bottom: 15px; padding: 10px; background-color: #FFFFFF; border-radius: 4px; }
+                .label { font-weight: bold; color: #2E8B57; display: inline-block; width: 100px; }
             </style>
         </head>
         <body>
@@ -125,12 +122,14 @@ if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
             <html>
             <head>
                 <style>
-                    body { font-family: Arial, sans-serif; line-height: 1.6; }
-                    .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-                    .header { background-color: #2E8B57; color: white; padding: 20px; text-align: center; }
-                    .content { padding: 20px; background-color: #f9f9f9; }
-                    .detail { margin-bottom: 15px; }
-                    .highlight { color: #2E8B57; font-weight: bold; }
+                    body { font-family: Arial, sans-serif; line-height: 1.6; background-color: #FFFFFF; }
+                    .container { max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #8FBC8F; border-radius: 8px; }
+                    .header { background-color: #2E8B57; color: #FFFFFF; padding: 20px; text-align: center; border-radius: 8px 8px 0 0; }
+                    .content { padding: 20px; background-color: #FFFACD; }
+                    .detail { margin-bottom: 15px; padding: 10px; background-color: #FFFFFF; border-radius: 4px; }
+                    .highlight { color: #2E8B57; font-weight: bold; display: inline-block; width: 100px; }
+                    .cta-button { display: inline-block; background-color: #FFD700; color: #333333; padding: 10px 20px; text-decoration: none; border-radius: 4px; margin-top: 15px; }
+                    .cta-button:hover { background-color: #2E8B57; color: #FFFFFF; }
                 </style>
             </head>
             <body>
@@ -153,12 +152,25 @@ if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
             </html>";
 
             send_email($email, "We've Received Your Service Request", $customer_content);
-            echo "Request sent successfully!\n";
+            header('Content-Type: application/json');
+            echo json_encode([
+                'success' => true,
+                'message' => '<div class="alert alert-success"><i class="fas fa-check-circle"></i> Thank you! Your request has been sent successfully. We will contact you shortly.</div>'
+            ]);
         } else {
-            echo "Error sending request.\n";
+            header('Content-Type: application/json');
+            echo json_encode([
+                'success' => false,
+                'message' => '<div class="alert alert-danger"><i class="fas fa-exclamation-circle"></i> Sorry, there was an error sending your request. Please try again.</div>'
+            ]);
         }
     } else {
-        echo "Validation errors: " . implode(", ", $errors) . "\n";
+        header('Content-Type: application/json');
+        echo json_encode([
+            'success' => false,
+            'message' => '<div class="alert alert-warning"><i class="fas fa-exclamation-triangle"></i> Please correct the following errors:</div>',
+            'errors' => $errors
+        ]);
     }
 }
 ?>

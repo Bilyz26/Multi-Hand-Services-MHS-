@@ -91,8 +91,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Form validation
+    // Form validation and submission
     const form = document.getElementById('serviceForm');
+    const formMessage = document.createElement('div');
+    formMessage.id = 'formMessage';
+    form.appendChild(formMessage);
+
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         
@@ -104,18 +108,43 @@ document.addEventListener('DOMContentLoaded', function() {
         const phoneRegex = /^\+?[\d\s-]{8,}$/;
 
         if (!emailRegex.test(email)) {
-            alert('Please enter a valid email address');
+            showMessage('<div class="alert alert-warning"><i class="fas fa-exclamation-triangle"></i> Please enter a valid email address</div>');
             return;
         }
 
         if (!phoneRegex.test(phone)) {
-            alert('Please enter a valid phone number');
+            showMessage('<div class="alert alert-warning"><i class="fas fa-exclamation-triangle"></i> Please enter a valid phone number</div>');
             return;
         }
 
-        // If validation passes, submit the form
-        this.submit();
+        // Show loading message
+        showMessage('<div class="alert alert-info"><i class="fas fa-spinner fa-spin"></i> Sending your request...</div>');
+
+        // Submit form using AJAX
+        fetch('process_form.php', {
+            method: 'POST',
+            body: new FormData(this)
+        })
+        .then(response => response.json())
+        .then(data => {
+            showMessage(data.message);
+            if (data.success) {
+                form.reset(); // Clear form on success
+                if (otherServiceGroup) {
+                    otherServiceGroup.style.display = 'none';
+                }
+            }
+        })
+        .catch(error => {
+            showMessage('<div class="alert alert-danger"><i class="fas fa-exclamation-circle"></i> An error occurred. Please try again.</div>');
+            console.error('Error:', error);
+        });
     });
+
+    function showMessage(message) {
+        formMessage.innerHTML = message;
+        formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
 
     // Date validation - prevent past dates
     const dateInput = document.getElementById('date');

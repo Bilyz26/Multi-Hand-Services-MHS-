@@ -12,7 +12,9 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <h1>ServicePro</h1>
+                <a href="#home">
+                    <img src="LOGO/mhs.png" alt="MHS Logo" class="logo-img">
+                </a>
             </div>
             <div class="nav-links">
                 <a href="#home" data-translate="nav_home">Home</a>
@@ -160,7 +162,7 @@
         </section>
     </main>
 
-    <footer>
+    <footer id="contact">
         <div class="footer-content">
             <div class="contact-info">
                 <h3 data-translate="footer_contact">Contact Us</h3>
