@@ -16,6 +16,9 @@
                     <img src="LOGO/mhs.png" alt="MHS Logo" class="logo-img">
                 </a>
             </div>
+            <button class="menu-toggle" aria-label="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
             <div class="nav-links">
                 <a href="#home" data-translate="nav_home">Home</a>
                 <a href="#services" data-translate="nav_services">Services</a>
